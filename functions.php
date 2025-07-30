@@ -20,10 +20,50 @@ $config = [
             'afterWidget' => '</div>'
         ],
         [
-            'name' => 'Ejemplo',
-            'beforeWidget' => '<li  class="claas_ej">',
+            'name' => 'Nuestros productos',
+            'beforeWidget' => '<li  class="nuestros_productos">',
             'afterWidget' => '</li>'
         ],
+        [
+            'name' => 'Sobre prolens',
+            'beforeWidget' => '<li  class="sobre_prolens">',
+            'afterWidget' => '</li>'
+        ],     
+        [
+            'name' => 'Caracteristicas',
+            'beforeWidget' => '<li  class="sobre_prolens">',
+            'afterWidget' => '</li>'
+        ], 
+        [
+            'name' => 'Productos destacados',
+            'beforeWidget' => '<li  class="productos_destacados">',
+            'afterWidget' => '</li>'
+        ],     
+        [
+            'name' => 'Productos nuevos',
+            'beforeWidget' => '<li  class="productos_nuevos">',
+            'afterWidget' => '</li>'
+        ],              
+        [
+            'name' => 'Blogs',
+            'beforeWidget' => '<li  class="blogs">',
+            'afterWidget' => '</li>'
+        ],          
+        [
+            'name' => 'Metodos de pago',
+            'beforeWidget' => '<li  class="metodos_pago">',
+            'afterWidget' => '</li>'
+        ],         
+        [
+            'name' => 'footer',
+            'beforeWidget' => '<li  class="footer">',
+            'afterWidget' => '</li>'
+        ],    
+        [
+            'name' => 'Buscador',
+            'beforeWidget' => '<li  class="buscador">',
+            'afterWidget' => '</li>'
+        ],                             
     ],
     'menus' => [
         [

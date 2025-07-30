@@ -9,3 +9,11 @@
   <?php endif; ?>
 
 </div>
+<section class="nuestros-productos">
+  <div class="ancho">
+    <div class="info">
+      <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Nuestros productos')): ?>
+      <?php endif; ?>
+    </div>
+  </div>
+</section>
