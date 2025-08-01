@@ -31,7 +31,7 @@ $config = [
         ],     
         [
             'name' => 'Caracteristicas',
-            'beforeWidget' => '<li  class="sobre_prolens">',
+            'beforeWidget' => '<li  class="caracteristicas_prolens">',
             'afterWidget' => '</li>'
         ], 
         [
@@ -63,7 +63,12 @@ $config = [
             'name' => 'Buscador',
             'beforeWidget' => '<li  class="buscador">',
             'afterWidget' => '</li>'
-        ],                             
+        ],      
+        [
+            'name' => 'Sobre prolens info',
+            'beforeWidget' => '<li  class="sobre_prolens_info">',
+            'afterWidget' => '</li>'
+        ],                                 
     ],
     'menus' => [
         [
