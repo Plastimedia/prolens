@@ -15,7 +15,6 @@
       <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Nuestros productos')): ?>
       <?php endif; ?>
     </div>
-  </div>
     <div class="grid-categorias">
     <?php
     $categories = get_categories(
@@ -38,6 +37,7 @@
             echo $laim[0];
             ?>" alt="<?php echo $category->name ?>" width="200" height="125">
             <p><?php echo $category->name ?></p>
+            <a href="#">Ver más</a>
           </div>
         </a>
       </div>
@@ -45,6 +45,8 @@
     }
     ?>
   </div>
+  </div>
+
 </section>
 <!-- SOBRE PROLENS -->
 <section class="sobre-prolens">
@@ -56,9 +58,9 @@
       <?php endif; ?>
     </div>
   </div>
-
+</section>
  <!-- SOBRE PROLENS -->
-
+<section>
  <!-- CARACTERISITCAS PROLENS -->
   <div class="caracteristicas-prolens">
     <div class="ancho">
@@ -68,7 +70,8 @@
       </div>
     </div>
   <!-- CARACTERISTICAS PROLENS -->
-
+</section>
+<section>
   <!-- PRODUCTOS DESTACADOS -->
   <div class="productos-destacados">
     <div class="ancho">
@@ -78,7 +81,8 @@
       </div>
     </div>
   <!-- PRODUCTOS DESTACADOS -->
-
+</section>
+<section>
   <!-- PRODUCTOS NUEVOS -->
   <div class="productos-nuevos">
     <div class="ancho">
@@ -88,7 +92,8 @@
       </div>
     </div>
   <!-- PRODUCTOS NUEVOS -->
-
+</section>
+<section>
   <!-- BLOGS -->
   <div class="blogs">
     <div class="ancho">
@@ -98,8 +103,9 @@
       </div>
     </div>
   <!-- BLOGS -->
-
-   <!--METODOS DE PAGO -->
+</section>
+<section>
+     <!--METODOS DE PAGO -->
   <div class="metodos-pago">
     <div class="ancho">
       <div class="info">
@@ -107,4 +113,7 @@
         <?php endif; ?>
       </div>
     </div>
+  </div>
+</section>
+
   <!-- METODOS DE PAGO -->

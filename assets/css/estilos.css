@@ -3542,6 +3542,20 @@ span.woocommerce-input-wrapper {
 .single-product .encabezado {
   display: none;
 }
+.nuestros-productos .ancho .grid-categorias {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 100px;
+}
+.sobre-prolens .ancho .info .column-text {
+  border: 1px solid gray;
+  border-radius: 20px;
+  padding: 120px 40px;
+}
 .sticky-wrapper {
   max-height: 0;
   display: table;

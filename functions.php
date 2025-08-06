@@ -21,53 +21,53 @@ $config = [
         ],
         [
             'name' => 'Nuestros productos',
-            'beforeWidget' => '<li  class="nuestros_productos">',
-            'afterWidget' => '</li>'
+            'beforeWidget' => '',
+            'afterWidget' => ''
         ],
         [
             'name' => 'Sobre prolens',
-            'beforeWidget' => '<li  class="sobre_prolens">',
-            'afterWidget' => '</li>'
+            'beforeWidget' => '',
+            'afterWidget' => ''
         ],     
         [
             'name' => 'Caracteristicas',
-            'beforeWidget' => '<li  class="caracteristicas_prolens">',
-            'afterWidget' => '</li>'
+            'beforeWidget' => '',
+            'afterWidget' => ''
         ], 
         [
             'name' => 'Productos destacados',
-            'beforeWidget' => '<li  class="productos_destacados">',
-            'afterWidget' => '</li>'
+            'beforeWidget' => '',
+            'afterWidget' => ''
         ],     
         [
             'name' => 'Productos nuevos',
-            'beforeWidget' => '<li  class="productos_nuevos">',
-            'afterWidget' => '</li>'
+            'beforeWidget' => '',
+            'afterWidget' => ''
         ],              
         [
             'name' => 'Blogs',
-            'beforeWidget' => '<li  class="blogs">',
-            'afterWidget' => '</li>'
+            'beforeWidget' => '',
+            'afterWidget' => ''
         ],          
         [
             'name' => 'Metodos de pago',
-            'beforeWidget' => '<li  class="metodos_pago">',
-            'afterWidget' => '</li>'
+            'beforeWidget' => '',
+            'afterWidget' => ''
         ],         
         [
             'name' => 'footer',
-            'beforeWidget' => '<li  class="footer">',
-            'afterWidget' => '</li>'
+            'beforeWidget' => '',
+            'afterWidget' => ''
         ],    
         [
             'name' => 'Buscador',
-            'beforeWidget' => '<li  class="buscador">',
-            'afterWidget' => '</li>'
+            'beforeWidget' => '',
+            'afterWidget' => ''
         ],      
         [
             'name' => 'Sobre prolens info',
-            'beforeWidget' => '<li  class="sobre_prolens_info">',
-            'afterWidget' => '</li>'
+            'beforeWidget' => '',
+            'afterWidget' => ''
         ],                                 
     ],
     'menus' => [
