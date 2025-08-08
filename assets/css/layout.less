@@ -75,7 +75,7 @@ img {
   width: 45px;
   height: 45px;
   font-size: 0;
-  background-color: #98C12E;
+  background-color: @tercero;
   // color:black;
   cursor: pointer;
   position: fixed;
@@ -90,7 +90,7 @@ img {
   &::after {
     content: "";
     display: block;
-    border-top: 3.5px solid #3E3539;
+    border-top: 3.5px solid white;
     width: 17px;
     height: 14px;
     position: absolute;
@@ -111,7 +111,7 @@ img {
   }
 
   &:hover {
-    background-color: lighten(#98C12E, 10%);
+    background-color: @tercero;
   }
 
   &:active {
@@ -1719,9 +1719,10 @@ label.formsAboveAlign {
 //++++++++++++++++++++++++++++++++++++++++++++//
 
 footer {
-  background: #a02320;
+  background: #353C69;
   position: relative;
   padding-top: 75px;
+  color: white;
 
   .ancho {
     padding-bottom: 5px;
@@ -1763,12 +1764,11 @@ footer {
 
           // padding-left: 15px;
           li {
-            width: 100%;
-            margin: 2px auto;
+            margin: 2px;
             list-style: none;
 
             a {
-              color: #6A6A6A;
+              color: white;
               text-decoration: none;
               display: inline-block;
               .font-size(0.9);
@@ -1854,7 +1854,7 @@ footer {
 }
 
 // // @Redes
-.menu-menu-redes-container {
+.menu-redes-container {
   ul {
     list-style: none;
     display: flex;
@@ -1874,7 +1874,7 @@ footer {
         height: 100%;
         line-height: 30px;
         margin: 0;
-        color: black;
+        color: white;
       }
 
       &::after {
@@ -1896,13 +1896,13 @@ footer {
         position: absolute;
         width: 100%;
         height: 100%;
-        .font-size(0);
+        .font-size(0) !important;
         z-index: 10;
       }
 
       &:hover {
         &::after {
-          border: 1px solid @primario;
+          border: 1px solid white;
           width: 100%;
           height: 100%;
           transition: width, height 0.5s;
@@ -1984,7 +1984,25 @@ footer {
     }
   }
 }
+.menu-contacto-container .menu li{
+    display: flex;
+    align-items: center;
 
+    a{
+      margin-left: 10px;
+    }
+}
+.menu-contacto-container .menu li.phone::before{
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-image: url("../images/icon-phone.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(3721%) hue-rotate(304deg) brightness(114%) contrast(101%);
+}
 main p strong {
   font-weight: 800;
 }
@@ -3124,14 +3142,130 @@ span.woocommerce-input-wrapper {
 }
 
 // ESTILOS HOME PROLENS
+p{
+  margin: 0;
+}
+section.nuestros-productos{
+  margin: 50px 0 100px;
+}
 .nuestros-productos .ancho .grid-categorias{
   display: flex;
   justify-content: center;
-  gap: 100px;
+  gap: 50px;
 }
-.sobre-prolens .ancho .info .column-text{
+.nuestros-productos .ancho .info{
+  text-align: center;
+margin: 20px 0;
+  h2{
+    font-weight: 700;
+  }
+}
+.nuestros-productos .ancho .grid-categorias .category .content{
+  img{
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  p{
+    margin-bottom: 10px;
+  }
+  a{
+    letter-spacing: 1px;
+  }
+}
+.sobre-prolens .ancho .content .column-text{
   border: 1px solid gray;
     border-radius: 20px;
-    padding: 120px 40px;
+    padding: 140px 40px;
+}
+.sobre-prolens .ancho{
+  .info{
+    text-align: center;
+    margin: 30px 0;
+  }
+  h2{
+    font-weight: 700;
+  }
+}
+.caracteristicas-prolens{
+    background-color: #353c69;
+    margin: 50px 0;
+}
+.caracteristicas-prolens .info{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 40px;
+}
+.productos-destacados .ancho{
+  .info{
+    margin-bottom: 30px 0;
+  }
+  h2{
+    text-align: center;
+    font-weight: 700;
+  }
+}
+section.destacados{
+  margin-bottom: 100px;
+}
+.productos-destacados .ancho .grid-categorias .category a{
+      background-color: #cfcfcf6e;
+    padding: 2px 20px;
+    border: 1px solid;
+    border-radius: 5px;
+}
+.productos-destacados .ancho .grid-categorias{
+      display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+section.recientes{
+  .info h2{
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+}
+section.blog{
+  background-color: #9BA0BF;
+  padding: 30px 0;
+  .info{
+    text-align: center;
+        margin-bottom: 30px;
+  }
+  h2{
+    font-weight: 700;
+  }
+  .blog-post{
+    background-color: white;
+    width: 20%;
+    border-radius: 5px;
+  }
+  img{
+    width: 100%;
+  }
+  .content-text{
+    padding: 20px;
+  }
+  .date{
+    font-size: smaller;
+    color: gray;
+    margin-top: 10px;
+  }
+}
+section.metodos-pagos{
+  background-color: #EEEFF6;
+   padding: 50px 0;
+  .info{
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  h2{
+    font-weight: 700;
+  }
+  .content-bancos{
+    display: flex;
+    justify-content: space-around;
+  }
 }
 // ESTILOA HOME PROLENS

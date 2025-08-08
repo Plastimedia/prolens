@@ -1,114 +1,100 @@
 @font-face {
-  font-family: 'Nunito';
-  font-style: italic;
-  font-weight: 200;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/nunito/v31/XRXK3I6Li01BKofIMPyPbj8d7IEAGXNiLXA3ig.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Nunito';
+  font-family: 'Rubik';
   font-style: italic;
   font-weight: 300;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/nunito/v31/XRXK3I6Li01BKofIMPyPbj8d7IEAGXNi83A3ig.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/rubik/v30/iJWbBXyIfDnIV7nEt3KSJbVDV49rz8sDE0Uw.ttf) format('truetype');
 }
 @font-face {
-  font-family: 'Nunito';
+  font-family: 'Rubik';
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/nunito/v31/XRXK3I6Li01BKofIMPyPbj8d7IEAGXNirXA3ig.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/rubik/v30/iJWbBXyIfDnIV7nEt3KSJbVDV49rz8tdE0Uw.ttf) format('truetype');
 }
 @font-face {
-  font-family: 'Nunito';
+  font-family: 'Rubik';
   font-style: italic;
   font-weight: 500;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/nunito/v31/XRXK3I6Li01BKofIMPyPbj8d7IEAGXNin3A3ig.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/rubik/v30/iJWbBXyIfDnIV7nEt3KSJbVDV49rz8tvE0Uw.ttf) format('truetype');
 }
 @font-face {
-  font-family: 'Nunito';
+  font-family: 'Rubik';
   font-style: italic;
   font-weight: 600;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/nunito/v31/XRXK3I6Li01BKofIMPyPbj8d7IEAGXNic3c3ig.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/rubik/v30/iJWbBXyIfDnIV7nEt3KSJbVDV49rz8uDFEUw.ttf) format('truetype');
 }
 @font-face {
-  font-family: 'Nunito';
+  font-family: 'Rubik';
   font-style: italic;
   font-weight: 700;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/nunito/v31/XRXK3I6Li01BKofIMPyPbj8d7IEAGXNiSnc3ig.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/rubik/v30/iJWbBXyIfDnIV7nEt3KSJbVDV49rz8u6FEUw.ttf) format('truetype');
 }
 @font-face {
-  font-family: 'Nunito';
+  font-family: 'Rubik';
   font-style: italic;
   font-weight: 800;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/nunito/v31/XRXK3I6Li01BKofIMPyPbj8d7IEAGXNiLXc3ig.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/rubik/v30/iJWbBXyIfDnIV7nEt3KSJbVDV49rz8vdFEUw.ttf) format('truetype');
 }
 @font-face {
-  font-family: 'Nunito';
+  font-family: 'Rubik';
   font-style: italic;
   font-weight: 900;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/nunito/v31/XRXK3I6Li01BKofIMPyPbj8d7IEAGXNiBHc3ig.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/rubik/v30/iJWbBXyIfDnIV7nEt3KSJbVDV49rz8v0FEUw.ttf) format('truetype');
 }
 @font-face {
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 200;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/nunito/v31/XRXI3I6Li01BKofiOc5wtlZ2di8HDDshRTM.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Nunito';
+  font-family: 'Rubik';
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/nunito/v31/XRXI3I6Li01BKofiOc5wtlZ2di8HDOUhRTM.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/rubik/v30/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-WYi1UA.ttf) format('truetype');
 }
 @font-face {
-  font-family: 'Nunito';
+  font-family: 'Rubik';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/nunito/v31/XRXI3I6Li01BKofiOc5wtlZ2di8HDLshRTM.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/rubik/v30/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-B4i1UA.ttf) format('truetype');
 }
 @font-face {
-  font-family: 'Nunito';
+  font-family: 'Rubik';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/nunito/v31/XRXI3I6Li01BKofiOc5wtlZ2di8HDIkhRTM.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/rubik/v30/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-NYi1UA.ttf) format('truetype');
 }
 @font-face {
-  font-family: 'Nunito';
+  font-family: 'Rubik';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/nunito/v31/XRXI3I6Li01BKofiOc5wtlZ2di8HDGUmRTM.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/rubik/v30/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-2Y-1UA.ttf) format('truetype');
 }
 @font-face {
-  font-family: 'Nunito';
+  font-family: 'Rubik';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/nunito/v31/XRXI3I6Li01BKofiOc5wtlZ2di8HDFwmRTM.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/rubik/v30/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-4I-1UA.ttf) format('truetype');
 }
 @font-face {
-  font-family: 'Nunito';
+  font-family: 'Rubik';
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/nunito/v31/XRXI3I6Li01BKofiOc5wtlZ2di8HDDsmRTM.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/rubik/v30/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-h4-1UA.ttf) format('truetype');
 }
 @font-face {
-  font-family: 'Nunito';
+  font-family: 'Rubik';
   font-style: normal;
   font-weight: 900;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/nunito/v31/XRXI3I6Li01BKofiOc5wtlZ2di8HDBImRTM.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/rubik/v30/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-ro-1UA.ttf) format('truetype');
 }
 html,
 body,
@@ -326,7 +312,7 @@ h3,
 h4,
 h5 {
   color: #000000;
-  font-family: "Nunito", sans-serif;
+  font-family: "Rubik", sans-serif;
   margin-bottom: 17px;
 }
 h1 {
@@ -437,7 +423,7 @@ otros
 [class^="icon-"],
 [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon', "Nunito", sans-serif !important;
+  font-family: 'icomoon', "Rubik", sans-serif !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -665,7 +651,7 @@ body {
   height: 100%;
   background: white;
   color: #000;
-  font-family: "Nunito", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 17px;
   font-size: 1rem;
   text-align: left;
@@ -707,7 +693,7 @@ img {
   width: 45px;
   height: 45px;
   font-size: 0;
-  background-color: #98C12E;
+  background-color: #353C69;
   cursor: pointer;
   position: fixed;
   bottom: 155px;
@@ -723,7 +709,7 @@ img {
 #ir-arriba::after {
   content: "";
   display: block;
-  border-top: 3.5px solid #3E3539;
+  border-top: 3.5px solid white;
   width: 17px;
   height: 14px;
   position: absolute;
@@ -742,7 +728,7 @@ img {
   transform: rotate(-45deg);
 }
 #ir-arriba:hover {
-  background-color: #afd54d;
+  background-color: #353C69;
 }
 #ir-arriba:active {
   -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
@@ -1128,7 +1114,7 @@ main.shopPage .las_subcategorias .ancho .contenido {
 main.shopPage .las_subcategorias .ancho .contenido h2 {
   font-weight: 600;
   position: relative;
-  font-family: "Nunito", sans-serif;
+  font-family: "Rubik", sans-serif;
 }
 main.shopPage .las_subcategorias .ancho .contenido h2::before {
   content: '';
@@ -1177,7 +1163,7 @@ main.shopPage .las_subcategorias .ancho .las_categorias_hijas .categoria_hija im
           transform: scale(1.1);
 }
 main.shopPage .las_subcategorias .ancho .las_categorias_hijas .categoria_hija h3 {
-  font-family: "Nunito", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-weight: 600;
   color: black;
   font-size: 15.3px;
@@ -1268,7 +1254,7 @@ main.shopPage aside .content {
 main.shopPage aside h2 {
   color: black;
   font-weight: 700;
-  font-family: "Nunito", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 20.4px;
   font-size: 1.2rem;
   text-align: center;
@@ -1312,7 +1298,7 @@ main.shopPage aside .wc-block-product-categories.is-list > ul > li > a {
   display: block;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: "Nunito", sans-serif;
+  font-family: "Rubik", sans-serif;
 }
 main.shopPage aside .wc-block-product-categories.is-list > ul > li > a span {
   font-weight: 800;
@@ -1408,7 +1394,7 @@ main.shopPage section.contenido h1 {
   font-size: 30.6px;
   font-size: 1.8rem;
   color: #000000;
-  font-family: "Nunito", sans-serif;
+  font-family: "Rubik", sans-serif;
 }
 main.shopPage section.contenido .term-description {
   display: none;
@@ -1567,7 +1553,7 @@ main.shopPage section.contenido .productPage .summary h1 {
   text-align: left;
   font-size: 30.6px;
   font-size: 1.8rem;
-  font-family: "Nunito", sans-serif;
+  font-family: "Rubik", sans-serif;
   margin: 0;
   line-height: 1.8rem;
   padding-bottom: 0;
@@ -1607,7 +1593,7 @@ main.shopPage section.contenido .productPage .summary p.stock.in-stock {
   font-size: 0.8rem;
 }
 main.shopPage section.contenido .productPage .summary p strong {
-  font-family: "Nunito", sans-serif;
+  font-family: "Rubik", sans-serif;
 }
 main.shopPage section.contenido .productPage .summary .woocommerce-product-details__short-description {
   color: black;
@@ -2218,9 +2204,10 @@ label.formsAboveAlign {
   color: #fff;
 }
 footer {
-  background: #a02320;
+  background: #353C69;
   position: relative;
   padding-top: 75px;
+  color: white;
 }
 footer .ancho {
   padding-bottom: 5px;
@@ -2263,12 +2250,11 @@ footer .ancho .columns div h2 {
   font-weight: 700;
 }
 footer .ancho .columns div ul li {
-  width: 100%;
-  margin: 2px auto;
+  margin: 2px;
   list-style: none;
 }
 footer .ancho .columns div ul li a {
-  color: #6A6A6A;
+  color: white;
   text-decoration: none;
   display: inline-block;
   font-size: 15.3px;
@@ -2344,13 +2330,13 @@ footer .firma .menu-redes-container ul > li a {
   width: 30px;
   height: 30px;
 }
-.menu-menu-redes-container ul {
+.menu-redes-container ul {
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-.menu-menu-redes-container ul li {
+.menu-redes-container ul li {
   font-size: 17px;
   margin-bottom: 7px;
   position: relative;
@@ -2358,16 +2344,16 @@ footer .firma .menu-redes-container ul > li a {
   height: 30px;
   margin: 0 5px;
 }
-.menu-menu-redes-container ul li::before {
+.menu-redes-container ul li::before {
   text-align: center;
   position: absolute;
   width: 100%;
   height: 100%;
   line-height: 30px;
   margin: 0;
-  color: black;
+  color: white;
 }
-.menu-menu-redes-container ul li::after {
+.menu-redes-container ul li::after {
   content: "";
   display: block;
   position: absolute;
@@ -2383,16 +2369,16 @@ footer .firma .menu-redes-container ul > li a {
   transition: width, height 0.5s;
   z-index: 8;
 }
-.menu-menu-redes-container ul li a {
+.menu-redes-container ul li a {
   position: absolute;
   width: 100%;
   height: 100%;
-  font-size: 0px;
-  font-size: 0rem;
+  font-size: 0px !important;
+  font-size: 0rem !important;
   z-index: 10;
 }
-.menu-menu-redes-container ul li:hover::after {
-  border: 1px solid #000000;
+.menu-redes-container ul li:hover::after {
+  border: 1px solid white;
   width: 100%;
   height: 100%;
   -webkit-transition: width, height 0.5s;
@@ -2453,6 +2439,29 @@ footer .firma .menu-redes-container ul > li a {
   transform: translateX(-50%);
   -webkit-transition: width 0.2s ease-out 0.3s;
   transition: width 0.2s ease-out 0.3s;
+}
+.menu-contacto-container .menu li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.menu-contacto-container .menu li a {
+  margin-left: 10px;
+}
+.menu-contacto-container .menu li.phone::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-image: url("../images/icon-phone.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  -webkit-filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(3721%) hue-rotate(304deg) brightness(114%) contrast(101%);
+          filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(3721%) hue-rotate(304deg) brightness(114%) contrast(101%);
 }
 main p strong {
   font-weight: 800;
@@ -2658,7 +2667,7 @@ body.category.category-blog main {
 }
 .single-post main p strong,
 .single-post main li strong {
-  font-weight: "Nunito", sans-serif;
+  font-weight: "Rubik", sans-serif;
   font-weight: 800;
 }
 .single-post main p {
@@ -2857,7 +2866,7 @@ main.main404 .wp-block-button a:hover {
   font-size: 17px;
   font-size: 1rem;
   padding: 10px 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-weight: 800;
 }
 .single-post .two-columns img {
@@ -3542,6 +3551,12 @@ span.woocommerce-input-wrapper {
 .single-product .encabezado {
   display: none;
 }
+p {
+  margin: 0;
+}
+section.nuestros-productos {
+  margin: 50px 0 100px;
+}
 .nuestros-productos .ancho .grid-categorias {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3549,12 +3564,125 @@ span.woocommerce-input-wrapper {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  gap: 100px;
+  gap: 50px;
 }
-.sobre-prolens .ancho .info .column-text {
+.nuestros-productos .ancho .info {
+  text-align: center;
+  margin: 20px 0;
+}
+.nuestros-productos .ancho .info h2 {
+  font-weight: 700;
+}
+.nuestros-productos .ancho .grid-categorias .category .content img {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.nuestros-productos .ancho .grid-categorias .category .content p {
+  margin-bottom: 10px;
+}
+.nuestros-productos .ancho .grid-categorias .category .content a {
+  letter-spacing: 1px;
+}
+.sobre-prolens .ancho .content .column-text {
   border: 1px solid gray;
   border-radius: 20px;
-  padding: 120px 40px;
+  padding: 140px 40px;
+}
+.sobre-prolens .ancho .info {
+  text-align: center;
+  margin: 30px 0;
+}
+.sobre-prolens .ancho h2 {
+  font-weight: 700;
+}
+.caracteristicas-prolens {
+  background-color: #353c69;
+  margin: 50px 0;
+}
+.caracteristicas-prolens .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 50px;
+  padding: 40px;
+}
+.productos-destacados .ancho .info {
+  margin-bottom: 30px 0;
+}
+.productos-destacados .ancho h2 {
+  text-align: center;
+  font-weight: 700;
+}
+section.destacados {
+  margin-bottom: 100px;
+}
+.productos-destacados .ancho .grid-categorias .category a {
+  background-color: #cfcfcf6e;
+  padding: 2px 20px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+.productos-destacados .ancho .grid-categorias {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 50px;
+}
+section.recientes .info h2 {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+section.blog {
+  background-color: #9BA0BF;
+  padding: 30px 0;
+}
+section.blog .info {
+  text-align: center;
+  margin-bottom: 30px;
+}
+section.blog h2 {
+  font-weight: 700;
+}
+section.blog .blog-post {
+  background-color: white;
+  width: 20%;
+  border-radius: 5px;
+}
+section.blog img {
+  width: 100%;
+}
+section.blog .content-text {
+  padding: 20px;
+}
+section.blog .date {
+  font-size: smaller;
+  color: gray;
+  margin-top: 10px;
+}
+section.metodos-pagos {
+  background-color: #EEEFF6;
+  padding: 50px 0;
+}
+section.metodos-pagos .info {
+  text-align: center;
+  margin-bottom: 20px;
+}
+section.metodos-pagos h2 {
+  font-weight: 700;
+}
+section.metodos-pagos .content-bancos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 .sticky-wrapper {
   max-height: 0;
@@ -3599,14 +3727,6 @@ header::before {
   max-height: 50px;
   width: auto;
 }
-.fijo header nav.el-menu .menu-ppl ul li a {
-  color: white !important;
-}
-.fijo header .options_shop .account:before,
-.fijo header .options_shop .cart .btn-cart {
-  -webkit-filter: contrast(0) grayscale(1) brightness(0) invert(1) !important;
-          filter: contrast(0) grayscale(1) brightness(0) invert(1) !important;
-}
 .fijo header .buscador .logo {
   display: none;
 }
@@ -3630,13 +3750,13 @@ header::before {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+  margin: 20px auto !important;
 }
 .container-menu .logo {
   display: block;
@@ -3686,6 +3806,7 @@ header::before {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: calc(100% - 450px);
   padding: 0 35px;
   position: relative;
 }
@@ -3730,7 +3851,7 @@ header::before {
   padding-bottom: 5px;
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
-  border: none;
+  border: 1px solid;
   outline: none;
 }
 .container-menu .container-menu-buscador .buscador form div input[type="search"]::-webkit-input-placeholder {
@@ -3753,7 +3874,7 @@ header::before {
   display: inline-block;
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
-  background-color: #A5DBD6;
+  background-color: #353C69;
   margin-left: 7px;
   font-size: 0;
   width: 60px;
@@ -3858,8 +3979,8 @@ header::before {
   padding: 7px 10px;
   font-size: 18.7px;
   font-size: 1.1rem;
-  font-family: "Nunito", sans-serif;
-  color: white;
+  font-family: "Rubik", sans-serif;
+  color: black;
   outline: none;
   text-align: center;
   font-weight: 300;
@@ -3869,10 +3990,10 @@ header::before {
 .container-menu .container-menu-buscador nav.el-menu .menu-ppl ul li:hover > a,
 .container-menu .container-menu-buscador nav.el-menu .menu-ppl ul li > a:focus,
 .container-menu .container-menu-buscador nav.el-menu .menu-ppl ul li.in-hover > a {
-  font-weight: 800;
+  font-weight: 600;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-  text-shadow: 1px 1px black;
+  text-shadow: 0px 0px black;
 }
 .container-menu .container-menu-buscador nav.el-menu .menu-ppl li.menu-categorias {
   position: relative;
@@ -4134,7 +4255,7 @@ header::before {
   vertical-align: middle;
   font-size: 0px;
   font-size: 0rem;
-  font-family: "Nunito", sans-serif;
+  font-family: "Rubik", sans-serif;
   color: white;
   outline: none;
   text-align: center;
@@ -4143,6 +4264,8 @@ header::before {
   margin-right: 10px;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
+  -webkit-filter: brightness(0) saturate(100%) invert(0%) sepia(53%) saturate(7426%) hue-rotate(217deg) brightness(104%) contrast(101%);
+          filter: brightness(0) saturate(100%) invert(0%) sepia(53%) saturate(7426%) hue-rotate(217deg) brightness(104%) contrast(101%);
 }
 .container-menu .options_shop .account::before {
   content: '';
@@ -4157,8 +4280,6 @@ header::before {
   background-size: 70%;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
-  -webkit-filter: contrast(0) grayscale(1) brightness(0) invert(1) !important;
-          filter: contrast(0) grayscale(1) brightness(0) invert(1) !important;
 }
 .container-menu .options_shop .wishlist {
   display: inline-block;
@@ -4204,8 +4325,8 @@ header::before {
 }
 .container-menu .options_shop .cart .btn-cart {
   display: block;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   background-image: url('../images/cart.svg');
   background-repeat: no-repeat;
   background-position: center;
@@ -4213,6 +4334,8 @@ header::before {
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   position: relative;
+  -webkit-filter: brightness(0) saturate(100%) invert(0%) sepia(53%) saturate(7426%) hue-rotate(217deg) brightness(104%) contrast(101%);
+          filter: brightness(0) saturate(100%) invert(0%) sepia(53%) saturate(7426%) hue-rotate(217deg) brightness(104%) contrast(101%);
 }
 .container-menu .options_shop .cart .btn-cart button {
   position: absolute;
@@ -4247,8 +4370,8 @@ header::before {
   display: none;
 }
 .container-menu .options_shop .cart .btn-cart:hover {
-  -webkit-filter: brightness(1.4);
-          filter: brightness(1.4);
+  -webkit-filter: brightness(0) saturate(100%) invert(0%) sepia(53%) saturate(7426%) hue-rotate(217deg) brightness(104%) contrast(101%);
+          filter: brightness(0) saturate(100%) invert(0%) sepia(53%) saturate(7426%) hue-rotate(217deg) brightness(104%) contrast(101%);
 }
 .container-menu .options_shop .cart .btn-cart:hover button {
   opacity: 1;
@@ -5358,7 +5481,7 @@ header::before {
     color: black;
     font-size: 34px;
     font-size: 2rem;
-    font-family: "Nunito", sans-serif;
+    font-family: "Rubik", sans-serif;
   }
   .contenedor-slide-mobil .plastislider__slider .splide__track .splide__list .splide__slide .plastislider__slide .plastislider__contenido strong {
     color: black;

@@ -68,7 +68,12 @@ $config = [
             'name' => 'Sobre prolens info',
             'beforeWidget' => '',
             'afterWidget' => ''
-        ],                                 
+        ],     
+        [
+            'name' => 'bancos',
+            'beforeWidget' => '',
+            'afterWidget' => ''
+        ],                                        
     ],
     'menus' => [
         [
@@ -78,7 +83,11 @@ $config = [
         [
             'slug' => 'menu-redes',
             'name' => 'Redes'
-        ]
+        ],
+        [
+            'slug' => 'menu-contacto',
+            'name' => 'Contacto'
+        ]        
     ],
     // edicion de post
     'editor-clasico' => false,
