@@ -328,8 +328,8 @@ header .ancho .options_shop{
 	left: 0;
 	right: 0;
 	width: 100%;
-	background: @primario;
-	border-top: 1px solid @quinto;
+	background: @tercero;
+	border-top: 1px solid;
 	padding: 5px 15px;
 	z-index: 1000;
 	justify-content: space-evenly;
@@ -1262,6 +1262,9 @@ main.shopPage section.contenido .productPage .summary h1{
 	.container-menu .container-menu-buscador .buscador form div input[type="search"]{
 		width: 200px;
 	}
+	.container-menu .container-menu-buscador .buscador form{
+		display: none !important;
+	}
 	.container-menu .logo a{
 		margin: 0 auto;
 	}
@@ -1476,9 +1479,6 @@ main.shopPage section.contenido .productPage .summary h1{
 	.container-menu .container-menu-buscador .buscador{
 		// display: none;
 	}
-	.container-menu .logo img{
-		filter:  invert(1) !important
-	}
 	header .ancho > .logo{
 		// display: none !important;
 	}
@@ -1682,6 +1682,7 @@ z-index: 10010;
 #btn_menu{
 display: block;
 margin-right: 45px;
+filter: brightness(0) saturate(100%) invert(22%) sepia(17%) saturate(1818%) hue-rotate(194deg) brightness(95%) contrast(89%);
 }
 
 .menu-ppl>ul>li:hover>a{
@@ -1820,3 +1821,33 @@ main .splide--slide .splide__arrows .splide__arrow--next{
 main .splide--slide .splide__arrows .splide__arrow--prev{
 	left: -10px !important;
 }
+// ESTILOS RESPONSIVE PROLENS
+section.nuestros-productos{
+	margin: 0 auto;
+}
+.nuestros-productos .ancho .grid-categorias{
+	flex-wrap: wrap;
+}
+.sobre-prolens .ancho .content .column-text{
+	padding: 50px 40px;
+	
+}
+.caracteristicas-prolens .info{
+	flex-wrap: wrap;
+	gap: 5px;
+}
+.productos-destacados .ancho .grid-categorias{
+	display: grid;
+	gap: 10px;
+}
+.splide__slide{
+	justify-content: center;
+	display: flex;
+}
+.productos-destacados .ancho .slider-destacados{
+	margin-top: 20px;
+}
+section.blog .blog-post{
+	width: 100%;
+}
+// ESTILOS RESPONSIVE PROLENS

@@ -73,7 +73,12 @@ $config = [
             'name' => 'bancos',
             'beforeWidget' => '',
             'afterWidget' => ''
-        ],                                        
+        ], 
+        [
+            'name' => 'Barra lateral de navegación',
+            'beforeWidget' => '',
+            'afterWidget' => ''
+        ],                                                  
     ],
     'menus' => [
         [
@@ -495,10 +500,11 @@ add_filter('woocommerce_product_tabs', 'woo_rename_tabs', 98);
 function woo_rename_tabs($tabs)
 {
 
-    // $tabs['description']['title'] = __( 'Descripción' );		// Rename the description tab
-    // $tabs['additional_information']['title'] = __( 'Especificaciones' );	// Rename the additional information tab
+    $tabs['description']['title'] = __( 'Descripción' );		// Rename the description tab
+    $tabs['additional_information']['title'] = __( 'Especificaciones' );	// Rename the additional information tab
     // $tabs['reviews']['title'] = __( 'Calificaciones y comentarios' );	// Rename the additional information tab
     // $tabs['additional_information']['priority'] = 1;	// Rename the additional information tab
+   unset($tabs['additional_information']);
     return $tabs;
 }
 
@@ -542,7 +548,84 @@ function PC__custom_order_list_woocommerce($sortby)
     return $sortby;
 }
 // lista de ordenamiento
+// CARACTERISTICAS DE PRODUCTOS
+// // Mostrar los campos en el Meta Box
+function mostrar_meta_caracteristicas_producto($post) {
+    // Obtener valores previos si existen
+    $caracteristica_1 = get_post_meta($post->ID, '_caracteristica_1', true);
+    $caracteristica_2 = get_post_meta($post->ID, '_caracteristica_2', true);
+    $caracteristica_3 = get_post_meta($post->ID, '_caracteristica_3', true);
+    $caracteristica_4 = get_post_meta($post->ID, '_caracteristica_4', true);
+    $caracteristica_5 = get_post_meta($post->ID, '_caracteristica_5', true);
 
+    // Campos HTML
+    echo '<label for="caracteristica_1">Característica 1:</label>';
+    echo '<input type="text" id="caracteristica_1" name="caracteristica_1" value="' . esc_attr($caracteristica_1) . '" style="width:100%;"><br><br>';
+
+    echo '<label for="caracteristica_2">Característica 2:</label>';
+    echo '<input type="text" id="caracteristica_2" name="caracteristica_2" value="' . esc_attr($caracteristica_2) . '" style="width:100%;"><br><br>';
+
+    echo '<label for="caracteristica_3">Característica 3:</label>';
+    echo '<input type="text" id="caracteristica_3" name="caracteristica_3" value="' . esc_attr($caracteristica_3) . '" style="width:100%;"><br><br>';
+
+    echo '<label for="caracteristica_4">Característica 4:</label>';
+    echo '<input type="text" id="caracteristica_4" name="caracteristica_4" value="' . esc_attr($caracteristica_4) . '" style="width:100%;"><br><br>';
+
+    echo '<label for="caracteristica_5">Característica 5:</label>';
+    echo '<input type="text" id="caracteristica_5" name="caracteristica_5" value="' . esc_attr($caracteristica_5) . '" style="width:100%;"><br><br>';
+}
+
+// Guardar los datos de los campos
+function guardar_meta_caracteristicas_producto($post_id) {
+    if (isset($_POST['caracteristica_1'])) {
+        update_post_meta($post_id, '_caracteristica_1', sanitize_text_field($_POST['caracteristica_1']));
+    }
+    if (isset($_POST['caracteristica_2'])) {
+        update_post_meta($post_id, '_caracteristica_2', sanitize_text_field($_POST['caracteristica_2']));
+    }
+    if (isset($_POST['caracteristica_3'])) {
+        update_post_meta($post_id, '_caracteristica_3', sanitize_text_field($_POST['caracteristica_3']));
+    }
+    if (isset($_POST['caracteristica_4'])) {
+        update_post_meta($post_id, '_caracteristica_4', sanitize_text_field($_POST['caracteristica_4']));
+    }
+    if (isset($_POST['caracteristica_5'])) {
+        update_post_meta($post_id, '_caracteristica_5', sanitize_text_field($_POST['caracteristica_5']));
+    }
+}
+add_action('save_post', 'guardar_meta_caracteristicas_producto');
+add_action('woocommerce_after_single_product_summary', 'mostrar_caracteristicas_producto', 15);
+
+function mostrar_caracteristicas_producto() {
+    global $post;
+
+    // Obtener las características desde los metadatos
+    $caracteristica_1 = get_post_meta($post->ID, '_caracteristica_1', true);
+    $caracteristica_2 = get_post_meta($post->ID, '_caracteristica_2', true);
+    $caracteristica_3 = get_post_meta($post->ID, '_caracteristica_3', true);
+    $caracteristica_4 = get_post_meta($post->ID, '_caracteristica_4', true);
+    $caracteristica_5 = get_post_meta($post->ID, '_caracteristica_5', true);
+
+    // Si no hay características, no mostrar nada
+    if (!$caracteristica_1 && !$caracteristica_2 && !$caracteristica_3 && !$caracteristica_4 && !$caracteristica_5) {
+        return;
+    }
+
+    // Mostrar las características
+    echo '<div class="caracteristicas-producto">';
+    echo '<ul class="columns">';
+    if ($caracteristica_1) echo '<li class="content-caracteristicas column caract1">' . esc_html($caracteristica_1) . '</li>';
+    if ($caracteristica_2) echo '<li class="content-caracteristicas column caract2">' . esc_html($caracteristica_2) . '</li>';
+    if ($caracteristica_3) echo '<li class="content-caracteristicas column caract3">' . esc_html($caracteristica_3) . '</li>';
+    if ($caracteristica_4) echo '<li class="content-caracteristicas column caract4">' . esc_html($caracteristica_4) . '</li>';
+    if ($caracteristica_5) echo '<li class="content-caracteristicas column caract5">' . esc_html($caracteristica_5) . '</li>';
+    echo '</ul>';
+    echo '</div>';
+    
+}
+   //Crear, guardar y mostrar campos de caracteristicas
+   //Nueva sección de caracteristicas
+// ----------------------------------
 
 
 // productos destacados
@@ -959,7 +1042,7 @@ function procesar_formulario_contacto()
     $subject = 'Nuevo formulario de contacto';
 
     // Dirección de correo a la que se enviará el mensaje (cambia este email por el tuyo)
-    $to = 'auxiliarciuniversal@gmail.com';
+    $to = '';
 
     // Enviar el correo usando wp_mail()
     $headers = array('Content-Type: text/plain; charset=UTF-8');
@@ -973,3 +1056,107 @@ function procesar_formulario_contacto()
 // Acciones para procesar el formulario, tanto para usuarios registrados como no registrados
 add_action('admin_post_procesar_formulario_contacto', 'procesar_formulario_contacto');
 add_action('admin_post_nopriv_procesar_formulario_contacto', 'procesar_formulario_contacto');
+ 
+// FUNCION PARA DESARROLLO A MEDIDA DE PROLENS
+   add_action('woocommerce_before_add_to_cart_button', function() {
+    global $product;
+
+    // Cambia 'lentes-de-contacto' por el slug real de tu categoría
+    if (!has_term('lentes-de-contacto', 'product_cat', $product->get_id())) {
+        return;
+    }
+    ?>
+    <div class="formula-opciones">
+      <p><strong>Ingresa tu fórmula de lentes de contacto</strong></p>
+
+      <div class="botones-opcion">
+        <button type="button" id="misma-formula" class="activo">
+          👓 Misma fórmula en los dos ojos
+        </button>
+        <button type="button" id="diferente-formula">
+          👓 Diferente fórmula para cada ojo
+        </button>
+      </div>
+
+      <!-- Select única -->
+      <div id="select-unico" class="formulario-opcion">
+        <label for="poder">Poder (Esfera)</label>
+        <select id="poder" name="poder">
+          <option value="">Elegir</option>
+          <option value="-1.00">-1.00</option>
+          <option value="-1.50">-1.50</option>
+          <option value="-2.00">-2.00</option>
+        </select>
+      </div>
+
+      <!-- Select doble -->
+      <div id="select-doble" class="formulario-opcion" style="display:none;">
+        <div>
+          <label for="ojo-izq">Ojo Izq.</label>
+          <select id="ojo-izq" name="ojo_izq">
+            <option value="">Elegir</option>
+            <option value="-1.00">-1.00</option>
+            <option value="-1.50">-1.50</option>
+            <option value="-2.00">-2.00</option>
+          </select>
+        </div>
+        <div>
+          <label for="ojo-der">Ojo Der.</label>
+          <select id="ojo-der" name="ojo_der">
+            <option value="">Elegir</option>
+            <option value="-1.00">-1.00</option>
+            <option value="-1.50">-1.50</option>
+            <option value="-2.00">-2.00</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      .botones-opcion button {
+        border: 1px solid #ccc;
+        background: #fff;
+        padding: 8px 12px;
+        margin-right: 5px;
+        cursor: pointer;
+        border-radius: 6px;
+      }
+      .botones-opcion .activo {
+        background: #5564d6;
+        color: white;
+        border-color: #5564d6;
+      }
+      .formulario-opcion {
+        margin-top: 10px;
+      }
+      .formulario-opcion div {
+        margin-bottom: 10px;
+      }
+    </style>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const btnMisma = document.getElementById('misma-formula');
+        const btnDiferente = document.getElementById('diferente-formula');
+        const selectUnico = document.getElementById('select-unico');
+        const selectDoble = document.getElementById('select-doble');
+
+        btnMisma.addEventListener('click', () => {
+          btnMisma.classList.add('activo');
+          btnDiferente.classList.remove('activo');
+          selectUnico.style.display = 'block';
+          selectDoble.style.display = 'none';
+        });
+
+        btnDiferente.addEventListener('click', () => {
+          btnDiferente.classList.add('activo');
+          btnMisma.classList.remove('activo');
+          selectUnico.style.display = 'none';
+          selectDoble.style.display = 'block';
+        });
+      });
+    </script>
+    <?php
+});
+ 
+// ----------------------------------

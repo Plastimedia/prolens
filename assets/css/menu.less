@@ -626,7 +626,6 @@ header::before {
 			text-decoration: none;
 			margin-right: 10px;
 			transition: all 0.2s;
-			filter: brightness(0) saturate(100%) invert(0%) sepia(53%) saturate(7426%) hue-rotate(217deg) brightness(104%) contrast(101%);
 
 			// filter: invert(1);
 			&:hover {
@@ -638,8 +637,8 @@ header::before {
 			&::before {
 				content: '';
 				display: inline-block;
-				width: 30px;
-				height: 30px;
+				width: 40px;
+				height: 40px;
 				margin-right: 7px;
 				vertical-align: middle;
 				background-image: url('@{imgurl}account.svg');
@@ -647,21 +646,20 @@ header::before {
 				background-position: center;
 				background-size: 70%;
 				transition: all 0.2s;
-				// filter: contrast(0) grayscale(1) brightness(0) invert(1) !important
 			}
 		}
 
 		.wishlist {
 			display: inline-block;
 			vertical-align: middle;
-			width: 30px;
-			height: 30px;
+			width: 40px;
+			height: 40px;
 			position: relative;
 			margin-right: 10px;
 			background-image: url('@{imgurl}star.svg');
 			background-repeat: no-repeat;
 			background-position: center;
-			background-size: 90%;
+			background-size: 70%;
 			transition: all 0.2s;
 
 			&:hover {
@@ -700,10 +698,9 @@ header::before {
 				background-image: url('@{imgurl}cart.svg');
 				background-repeat: no-repeat;
 				background-position: center;
-				background-size: 90%;
+				background-size: 70%;
 				transition: all 0.2s;
 				position: relative;
-				filter: brightness(0) saturate(100%) invert(0%) sepia(53%) saturate(7426%) hue-rotate(217deg) brightness(104%) contrast(101%);
 
 				// filter: contrast(0) grayscale(1) brightness(0) ;
 				button {
@@ -742,7 +739,7 @@ header::before {
 				}
 
 				&:hover {
-					filter: brightness(0) saturate(100%) invert(0%) sepia(53%) saturate(7426%) hue-rotate(217deg) brightness(104%) contrast(101%);
+					//filter: brightness(0) saturate(100%) invert(0%) sepia(53%) saturate(7426%) hue-rotate(217deg) brightness(104%) contrast(101%);
 
 					button {
 						opacity: 1;

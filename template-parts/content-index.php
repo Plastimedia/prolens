@@ -101,11 +101,48 @@
           <?php
           }
           ?>
-        </div>
       </div>
+      <!-- PRODUCTOS DESTACADOS -->
+      <?php
+      $args = array(
+        'post_type'      => 'product',
+        'posts_per_page' => 6,
+        'tax_query'      => array(
+          array(
+            'taxonomy' => 'product_visibility',
+            'field'    => 'name',
+            'terms'    => 'featured'
+          )
+        )
+      );
+      $featured_query = new WP_Query($args);
+
+      if ($featured_query->have_posts()) :
+      ?>
+        <div class="splide slider-destacados" id="productos-destacados">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <?php while ($featured_query->have_posts()) : $featured_query->the_post(); global $product; ?>
+                <li class="splide__slide">
+                  <a href="<?php the_permalink(); ?>">
+                    <?php woocommerce_show_product_sale_flash(); ?>
+                    <?php if (has_post_thumbnail()) {
+                      the_post_thumbnail('medium');
+                    } ?>
+                    <h3><?php the_title(); ?></h3>
+                    <span class="price"><?php echo $product->get_price_html(); ?></span>
+                  </a>
+                </li>
+              <?php endwhile; wp_reset_postdata(); ?>
+            </ul>
+          </div>
+        </div>
+      <?php endif; ?>      
 
   </div>
-  <!-- PRODUCTOS DESTACADOS -->
+  <!-- PRODUCTOS DESTACADOS -->      
+    </div>
+  </div>  
 </section>
 <section class="recientes">
   <!-- PRODUCTOS NUEVOS -->
@@ -115,6 +152,41 @@
         <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Productos nuevos')): ?>
         <?php endif; ?>
       </div>
+<div class="splide" id="slider-recientes">
+    <div class="splide__track">
+      <ul class="splide__list">
+        <?php
+        $args = array(
+          'post_type' => 'product',
+          'posts_per_page' => 10, // cantidad de productos
+          'orderby' => 'date',
+          'order' => 'DESC'
+        );
+        $recent_products = new WP_Query($args);
+
+        if ($recent_products->have_posts()) :
+          while ($recent_products->have_posts()) : $recent_products->the_post();
+            global $product;
+            ?>
+            <li class="splide__slide">
+              <a href="<?php the_permalink(); ?>">
+                <?php if (has_post_thumbnail()) {
+                  the_post_thumbnail('medium');
+                } ?>
+                <h3><?php the_title(); ?></h3>
+                <span class="price"><?php echo $product->get_price_html(); ?></span>
+              </a>
+            </li>
+            <?php
+          endwhile;
+          wp_reset_postdata();
+        else :
+          echo '<li>No hay productos recientes</li>';
+        endif;
+        ?>
+      </ul>
+    </div>
+  </div>      
     </div>
   <!-- PRODUCTOS NUEVOS -->
 </section>
@@ -126,7 +198,9 @@
         <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Blogs')): ?>
         <?php endif; ?>
       </div>
-      <div>
+<div class="splide" id="blogs">
+    <div class="splide__track">
+      <ul class="splide__list">
         <?php
         $args = array(
           'post_type' => 'post',
@@ -154,7 +228,10 @@
         else : ?>
           <p><?php _e('No recent posts found.'); ?></p>
         <?php endif; ?>
-      </div>
+      </ul>
+    </div>
+  </div> 
+
     </div>
   <!-- BLOGS -->
 </section>
@@ -166,12 +243,101 @@
         <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Metodos de pago')): ?>
         <?php endif; ?>
       </div>
-      <div class="content-bancos">
-        <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('bancos')): ?>
-        <?php endif; ?>
-      <div>
+      <div class="splide content-bancos" id="slider-bancos">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('bancos')): ?>
+              <?php endif; ?>
+            </ul>
+          </div>
+        </div>  
     </div>
   </div>
 </section>
 
   <!-- METODOS DE PAGO -->
+   <script>
+  document.addEventListener( 'DOMContentLoaded', function () {
+    new Splide( '#productos-destacados', {
+      type   : 'loop',
+      perPage: 4,
+      perMove: 1,
+      autoplay: true,
+      gap: '10px',
+      breakpoints: {
+        768: { perPage: 1 }
+      }
+    }).mount();
+  });
+  document.addEventListener('DOMContentLoaded', function () {
+  new Splide('#slider-recientes', {
+    type   : 'loop',
+    perPage: 4,
+    gap    : '10px',
+    autoplay: true,
+    breakpoints: {
+      768: { perPage: 2 },
+      480: { perPage: 1 }
+    }
+  }).mount();
+});
+  document.addEventListener('DOMContentLoaded', function () {
+  new Splide('#blogs', {
+    type   : 'loop',
+    perPage: 3,
+    gap    : '10px',
+    autoplay: true,
+    breakpoints: {
+      768: { perPage: 2 },
+      480: { perPage: 1 }
+    }
+  }).mount();
+});
+  document.addEventListener('DOMContentLoaded', function () {
+  new Splide('#slider-bancos', {
+    type   : 'loop',
+    perPage: 3,
+    gap    : '10px',
+    autoplay: true,
+    breakpoints: {
+      768: { perPage: 2 },
+      480: { perPage: 1 }
+    }
+  }).mount();
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  let splideInstance = null;
+
+  function initSlider() {
+    if (window.innerWidth <= 768) {
+      // Si estamos en responsive y el slider no está inicializado
+      if (!splideInstance) {
+        splideInstance = new Splide('#slider-bancos', {
+          type   : 'loop',
+          perPage: 2,
+          gap    : '10px',
+          autoplay: true,
+          breakpoints: {
+            480: { perPage: 1 }
+          }
+        }).mount();
+      }
+    } else {
+      // Si volvemos a PC y el slider está activo, lo destruimos
+      if (splideInstance) {
+        splideInstance.destroy();
+        splideInstance = null;
+      }
+    }
+  }
+
+  // Ejecutar al cargar
+  initSlider();
+
+  // Volver a evaluar cuando cambie el tamaño de pantalla
+  window.addEventListener('resize', initSlider);
+});
+</script>
+

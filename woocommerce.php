@@ -14,6 +14,9 @@
 					</div> 
 				</div>
 			</div>
+			<div class="bannerTienda">
+				<img src="../assets/images/Sliderfondotienda.png" alt="">
+			</div>			
 			<div class="tienda">
 
 				<aside class="navegacion">
@@ -42,6 +45,7 @@
 		<script>
 			$(document).ready(function(){
 				var titulo = $("h1").text();
+				$("#name-category").text(titulo)
 				$(".wc-block-product-categories-list-item").each(function(){
 					if($(this).children("a").text() == titulo){
 						$(this).addClass('current-menu-item')

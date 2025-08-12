@@ -96,6 +96,10 @@
   font-display: swap;
   src: url(https://fonts.gstatic.com/s/rubik/v30/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-ro-1UA.ttf) format('truetype');
 }
+@importar '@splidejs/splide/css';
+@importar '@splidejs/splide/css/skyblue';
+@importar '@splidejs/splide/css/sea-green';
+@importar '@splidejs/splide/css/core';
 html,
 body,
 body div,
@@ -3554,6 +3558,9 @@ span.woocommerce-input-wrapper {
 p {
   margin: 0;
 }
+h2 {
+  font-size: 1.6rem;
+}
 section.nuestros-productos {
   margin: 50px 0 100px;
 }
@@ -3617,13 +3624,16 @@ section.nuestros-productos {
   font-weight: 700;
 }
 section.destacados {
-  margin-bottom: 100px;
+  margin-bottom: 90px;
 }
 .productos-destacados .ancho .grid-categorias .category a {
   background-color: #cfcfcf6e;
   padding: 2px 20px;
   border: 1px solid;
   border-radius: 5px;
+}
+.productos-destacados .ancho .slider-destacados {
+  margin-top: 50px;
 }
 .productos-destacados .ancho .grid-categorias {
   display: -webkit-box;
@@ -3633,6 +3643,9 @@ section.destacados {
       -ms-flex-pack: center;
           justify-content: center;
   gap: 50px;
+}
+section.recientes {
+  margin-bottom: 50px;
 }
 section.recientes .info h2 {
   text-align: center;
@@ -3681,6 +3694,10 @@ section.metodos-pagos .content-bancos {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+.splide__list {
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
@@ -4264,14 +4281,12 @@ header::before {
   margin-right: 10px;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
-  -webkit-filter: brightness(0) saturate(100%) invert(0%) sepia(53%) saturate(7426%) hue-rotate(217deg) brightness(104%) contrast(101%);
-          filter: brightness(0) saturate(100%) invert(0%) sepia(53%) saturate(7426%) hue-rotate(217deg) brightness(104%) contrast(101%);
 }
 .container-menu .options_shop .account::before {
   content: '';
   display: inline-block;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   margin-right: 7px;
   vertical-align: middle;
   background-image: url('../images/account.svg');
@@ -4284,14 +4299,14 @@ header::before {
 .container-menu .options_shop .wishlist {
   display: inline-block;
   vertical-align: middle;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   position: relative;
   margin-right: 10px;
   background-image: url('../images/star.svg');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 90%;
+  background-size: 70%;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
@@ -4330,12 +4345,10 @@ header::before {
   background-image: url('../images/cart.svg');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 90%;
+  background-size: 70%;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   position: relative;
-  -webkit-filter: brightness(0) saturate(100%) invert(0%) sepia(53%) saturate(7426%) hue-rotate(217deg) brightness(104%) contrast(101%);
-          filter: brightness(0) saturate(100%) invert(0%) sepia(53%) saturate(7426%) hue-rotate(217deg) brightness(104%) contrast(101%);
 }
 .container-menu .options_shop .cart .btn-cart button {
   position: absolute;
@@ -4368,10 +4381,6 @@ header::before {
 }
 .container-menu .options_shop .cart .btn-cart .wc-block-mini-cart__amount {
   display: none;
-}
-.container-menu .options_shop .cart .btn-cart:hover {
-  -webkit-filter: brightness(0) saturate(100%) invert(0%) sepia(53%) saturate(7426%) hue-rotate(217deg) brightness(104%) contrast(101%);
-          filter: brightness(0) saturate(100%) invert(0%) sepia(53%) saturate(7426%) hue-rotate(217deg) brightness(104%) contrast(101%);
 }
 .container-menu .options_shop .cart .btn-cart:hover button {
   opacity: 1;
@@ -5077,8 +5086,8 @@ header::before {
     left: 0;
     right: 0;
     width: 100%;
-    background: #000000;
-    border-top: 1px solid #9BA0BF;
+    background: #353C69;
+    border-top: 1px solid;
     padding: 5px 15px;
     z-index: 1000;
     -webkit-box-pack: space-evenly;
@@ -5969,6 +5978,9 @@ header::before {
   .container-menu .container-menu-buscador .buscador form div input[type="search"] {
     width: 200px;
   }
+  .container-menu .container-menu-buscador .buscador form {
+    display: none !important;
+  }
   .container-menu .logo a {
     margin: 0 auto;
   }
@@ -6119,10 +6131,6 @@ header::before {
     width: 45px !important;
     height: 45px !important;
     z-index: 200 !important;
-  }
-  .container-menu .logo img {
-    -webkit-filter: invert(1) !important;
-            filter: invert(1) !important;
   }
   .container-menu .container-menu-buscador {
     -webkit-box-orient: horizontal;
@@ -6299,6 +6307,8 @@ header::before {
   #btn_menu {
     display: block;
     margin-right: 45px;
+    -webkit-filter: brightness(0) saturate(100%) invert(22%) sepia(17%) saturate(1818%) hue-rotate(194deg) brightness(95%) contrast(89%);
+            filter: brightness(0) saturate(100%) invert(22%) sepia(17%) saturate(1818%) hue-rotate(194deg) brightness(95%) contrast(89%);
   }
   .menu-ppl > ul > li:hover > a {
     color: white;
@@ -6436,6 +6446,40 @@ header::before {
   }
   main .splide--slide .splide__arrows .splide__arrow--prev {
     left: -10px !important;
+  }
+  section.nuestros-productos {
+    margin: 0 auto;
+  }
+  .nuestros-productos .ancho .grid-categorias {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .sobre-prolens .ancho .content .column-text {
+    padding: 50px 40px;
+  }
+  .caracteristicas-prolens .info {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 5px;
+  }
+  .productos-destacados .ancho .grid-categorias {
+    display: -ms-grid;
+    display: grid;
+    gap: 10px;
+  }
+  .splide__slide {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .productos-destacados .ancho .slider-destacados {
+    margin-top: 20px;
+  }
+  section.blog .blog-post {
+    width: 100%;
   }
 }
 @media screen and (max-width: 599px) {
