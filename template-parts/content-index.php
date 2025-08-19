@@ -293,10 +293,10 @@
     }
   }).mount();
 });
-  document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
   new Splide('#slider-bancos', {
     type   : 'loop',
-    perPage: 3,
+    perPage: 4,
     gap    : '10px',
     autoplay: true,
     breakpoints: {
@@ -306,38 +306,3 @@
   }).mount();
 });
 </script>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  let splideInstance = null;
-
-  function initSlider() {
-    if (window.innerWidth <= 768) {
-      // Si estamos en responsive y el slider no está inicializado
-      if (!splideInstance) {
-        splideInstance = new Splide('#slider-bancos', {
-          type   : 'loop',
-          perPage: 2,
-          gap    : '10px',
-          autoplay: true,
-          breakpoints: {
-            480: { perPage: 1 }
-          }
-        }).mount();
-      }
-    } else {
-      // Si volvemos a PC y el slider está activo, lo destruimos
-      if (splideInstance) {
-        splideInstance.destroy();
-        splideInstance = null;
-      }
-    }
-  }
-
-  // Ejecutar al cargar
-  initSlider();
-
-  // Volver a evaluar cuando cambie el tamaño de pantalla
-  window.addEventListener('resize', initSlider);
-});
-</script>
-

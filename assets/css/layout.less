@@ -1126,6 +1126,7 @@ main {
             display: block;
             align-items: center;
             justify-content: space-evenly;
+            margin-bottom: 0 !important;
 
             .groupquantity .quantity {
               position: relative;
@@ -1199,30 +1200,30 @@ main {
                 // border-radius: 10px;
                 color: #464646;
                 margin: 20px 0;
-                border: 1px solid @tercero;
+                // border: 1px solid @tercero;
                 height: 30px;
               }
 
               button {
-                width: 50px;
+                width: 30px;
                 height: 30px;
                 display: block;
-                color: @tercero;
-                border-radius: 7px 0 0 7px;
+                color: gray;
+                border-radius: 5px;
                 text-align: center;
                 line-height: 8px;
                 cursor: pointer;
                 transition: all 0.5s;
                 border: 1px solid @tercero;
+                padding: 0;
 
                 &:last-child {
-                  border-radius: 0 7px 7px 0;
+                  border-radius: 5px;
                 }
 
                 &:hover {
-                  background: #E9DA7F;
-
-
+                  background: @tercero;
+                  color: white;
                 }
               }
             }
@@ -1248,10 +1249,9 @@ main {
               }
 
               &.single_add_to_cart_button {
-                border-radius: 7px;
-                background-color: #E9DA7F;
-                font-weight: 700;
-                color: #3E3539;
+                background-color: @tercero;
+                font-weight: 300;
+                color: white;
 
                 &:hover {
 
@@ -1467,7 +1467,7 @@ main {
           // }
 
           h2 {
-            .font-size(2);
+            //.font-size(2);
             font-weight: 700;
             position: relative;
             padding-bottom: 5px;
@@ -3178,7 +3178,7 @@ margin: 20px 0;
 .sobre-prolens .ancho .content .column-text{
   border: 1px solid gray;
     border-radius: 20px;
-    padding: 140px 40px;
+    padding: 120px 40px;
 }
 .sobre-prolens .ancho{
   .info{
@@ -3187,6 +3187,20 @@ margin: 20px 0;
   }
   h2{
     font-weight: 700;
+  }
+  .conoce-mas-button{
+    margin-top: 40px;
+  }
+  .conoce-mas-button a strong::after{
+    content: "";
+    background-image: url("@{imgurl}after-conocemas.png");
+    width: 15px;
+    height: 15px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: middle;
   }
 }
 .caracteristicas-prolens{
@@ -3270,12 +3284,40 @@ section.metodos-pagos{
   h2{
     font-weight: 700;
   }
-  .content-bancos{
-    display: flex;
-    justify-content: space-around;
+  .content-bancos .splide__arrows{
+    display: none;
   }
 }
 .splide__list{
   justify-content: space-around;
+}
+.caracteristicas-producto ul li::before{
+  content: "";
+  width: 50px;
+  height: 50px;
+  background-image: url("@{imgurl}estrella-caracteristicas.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.caracteristicas-producto{
+  h2{
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+  li{
+    list-style: none;
+    align-items: center;
+    display: flex;
+    gap: 20px;
+  }
+  ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 30px;
+  }
 }
 // ESTILOA HOME PROLENS

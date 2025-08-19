@@ -549,6 +549,20 @@ function PC__custom_order_list_woocommerce($sortby)
 }
 // lista de ordenamiento
 // CARACTERISTICAS DE PRODUCTOS
+add_action('woocommerce_after_single_product_summary', 'mostrar_caracteristicas_producto', 5);
+
+//Crear Meta Box en el editor de productos
+function agregar_meta_box_caracteristicas_producto() {
+    add_meta_box(
+        'caracteristicas_producto',                // ID único
+        'Características del producto',            // Título del Meta Box
+        'mostrar_meta_caracteristicas_producto',   // Función callback
+        'product',                                 // Post type (productos de WooCommerce)
+        'normal',                                  // Contexto (normal, side, advanced)
+        'high'                                     // Prioridad
+    );
+}
+add_action('add_meta_boxes', 'agregar_meta_box_caracteristicas_producto');
 // // Mostrar los campos en el Meta Box
 function mostrar_meta_caracteristicas_producto($post) {
     // Obtener valores previos si existen
@@ -556,7 +570,6 @@ function mostrar_meta_caracteristicas_producto($post) {
     $caracteristica_2 = get_post_meta($post->ID, '_caracteristica_2', true);
     $caracteristica_3 = get_post_meta($post->ID, '_caracteristica_3', true);
     $caracteristica_4 = get_post_meta($post->ID, '_caracteristica_4', true);
-    $caracteristica_5 = get_post_meta($post->ID, '_caracteristica_5', true);
 
     // Campos HTML
     echo '<label for="caracteristica_1">Característica 1:</label>';
@@ -570,9 +583,6 @@ function mostrar_meta_caracteristicas_producto($post) {
 
     echo '<label for="caracteristica_4">Característica 4:</label>';
     echo '<input type="text" id="caracteristica_4" name="caracteristica_4" value="' . esc_attr($caracteristica_4) . '" style="width:100%;"><br><br>';
-
-    echo '<label for="caracteristica_5">Característica 5:</label>';
-    echo '<input type="text" id="caracteristica_5" name="caracteristica_5" value="' . esc_attr($caracteristica_5) . '" style="width:100%;"><br><br>';
 }
 
 // Guardar los datos de los campos
@@ -589,12 +599,8 @@ function guardar_meta_caracteristicas_producto($post_id) {
     if (isset($_POST['caracteristica_4'])) {
         update_post_meta($post_id, '_caracteristica_4', sanitize_text_field($_POST['caracteristica_4']));
     }
-    if (isset($_POST['caracteristica_5'])) {
-        update_post_meta($post_id, '_caracteristica_5', sanitize_text_field($_POST['caracteristica_5']));
-    }
 }
 add_action('save_post', 'guardar_meta_caracteristicas_producto');
-add_action('woocommerce_after_single_product_summary', 'mostrar_caracteristicas_producto', 15);
 
 function mostrar_caracteristicas_producto() {
     global $post;
@@ -604,7 +610,6 @@ function mostrar_caracteristicas_producto() {
     $caracteristica_2 = get_post_meta($post->ID, '_caracteristica_2', true);
     $caracteristica_3 = get_post_meta($post->ID, '_caracteristica_3', true);
     $caracteristica_4 = get_post_meta($post->ID, '_caracteristica_4', true);
-    $caracteristica_5 = get_post_meta($post->ID, '_caracteristica_5', true);
 
     // Si no hay características, no mostrar nada
     if (!$caracteristica_1 && !$caracteristica_2 && !$caracteristica_3 && !$caracteristica_4 && !$caracteristica_5) {
@@ -613,12 +618,12 @@ function mostrar_caracteristicas_producto() {
 
     // Mostrar las características
     echo '<div class="caracteristicas-producto">';
+    echo '<h2>Características de producto</h2>';
     echo '<ul class="columns">';
     if ($caracteristica_1) echo '<li class="content-caracteristicas column caract1">' . esc_html($caracteristica_1) . '</li>';
     if ($caracteristica_2) echo '<li class="content-caracteristicas column caract2">' . esc_html($caracteristica_2) . '</li>';
     if ($caracteristica_3) echo '<li class="content-caracteristicas column caract3">' . esc_html($caracteristica_3) . '</li>';
     if ($caracteristica_4) echo '<li class="content-caracteristicas column caract4">' . esc_html($caracteristica_4) . '</li>';
-    if ($caracteristica_5) echo '<li class="content-caracteristicas column caract5">' . esc_html($caracteristica_5) . '</li>';
     echo '</ul>';
     echo '</div>';
     
@@ -788,54 +793,59 @@ function PC__related_productss()
     </script>
     <?php
 }
+//PRODUCTOS RELACIONADOS VISTA INTERNA DE PRODUCTOS
+//  add_action('woocommerce_after_single_product_summary','PC__related_productss',20);
+// function product_by_category()
+// {
+//     $nonce = sanitize_text_field($_POST['nonce']);
+//     if (!wp_verify_nonce($nonce, 'my-ajax-nonce')) {
+//         die('Busted!');
+//     }
 
-// add_action('woocommerce_after_single_product_summary','PC__related_productss',20);
-// productos destacados
-add_filter('woocommerce_available_variation', 'custom_variation_images', 10, 3);
+//     $cat = sanitize_text_field($_POST['cat']);
 
-function custom_variation_images($args, $product, $variation)
-{
-    $args['image']['src'] = wp_get_attachment_image_url($variation->get_image_id(), 'full');
-    return $args;
-}
+//     // Convertimos a slug seguro
+//     $slug = sanitize_title($cat);
 
+//     // Traer productos con tax_query
+//     $product_args = array(
+//         'status' => 'publish',
+//         'limit'  => 4, // 👈 cantidad de productos relacionados
+//         'tax_query' => array(
+//             array(
+//                 'taxonomy' => 'product_cat',
+//                 'field'    => 'slug',
+//                 'terms'    => $slug,
+//             ),
+//         ),
+//     );
 
-function product_by_category()
-{
-    $nonce = sanitize_text_field($_POST['nonce']);
-    if (!wp_verify_nonce($nonce, 'my-ajax-nonce')) {
-        die('Busted!');
-    }
+//     $products = wc_get_products($product_args);
 
-    $cat = $_POST['cat'];
-    $slug = strtolower(trim(preg_replace('/[\s-]+/', '-', preg_replace('/[^A-Za-z0-9-]+/', '-', preg_replace('/[&]/', 'and', preg_replace('/[\']/', '', iconv('UTF-8', 'ASCII//TRANSLIT', $cat))))), '-'));
-    $product_term_slugs = array($slug);
-    $product_args = array(
-        'post_status' => 'publish',
-        'limit' => -1,
-        'category' => $product_term_slugs,
-    );
-    $products = wc_get_products($product_args);
+//     if (!empty($products)) {
+//         $html = '<div class="dinamyc-products-grid">';
 
-    if (count($products) > 0) {
-        $product = $products[0];
-        $html = '';
-        $html .= '<div class="dinamyc-product">';
-        $html .= '<a href="' . $product->get_permalink() . '">';
-        $html .= '<strong>Producto destacado</strong>';
-        $html .= $product->get_image();
-        $html .= '<p>' . $product->get_title() . '</p>';
-        $html .= '</a>';
-        $html .= '</div>';
-        echo $html;
-    } else {
-        echo '';
-    }
-    wp_die();
-}
-add_action('wp_ajax_nopriv_get_product_by_category', 'product_by_category');
-add_action('wp_ajax_get_product_by_category', 'product_by_category');
+//         foreach ($products as $product) {
+//             $html .= '<div class="dinamyc-product">';
+//             $html .= '<a href="' . $product->get_permalink() . '">';
+//             $html .= $product->get_image();
+//             $html .= '<p class="product-title">' . $product->get_name() . '</p>';
+//             $html .= '<span class="price">' . $product->get_price_html() . '</span>';
+//             $html .= '</a>';
+//             $html .= '</div>';
+//         }
 
+//         $html .= '</div>';
+//         echo $html;
+//     } else {
+//         echo '<p>No hay productos relacionados en esta categoría.</p>';
+//     }
+
+//     wp_die();
+// }
+// add_action('wp_ajax_nopriv_get_product_by_category', 'product_by_category');
+// add_action('wp_ajax_get_product_by_category', 'product_by_category');
+//PRODUCTOS RELACIONADOS VISTA INTERNA DE PRODUCTOS
 function title_mini_cart()
 {
     echo 'Mi carrito';
@@ -981,7 +991,7 @@ function quick_buy_button()
     $quick_buy_url = wc_get_checkout_url() . '?add-to-cart=' . $product->get_id();
 
     // Botón de "Compra rápida"
-    echo '<button class="single_add_to_cart_button button alt"><a href="' . esc_url($quick_buy_url) . '" class="">Comprar ahora</a></button>';
+   // echo '<button class="single_add_to_cart_button button alt"><a href="' . esc_url($quick_buy_url) . '" class="">Comprar ahora</a></button>';
 }
 add_action('wp', 'remove_woocommerce_structured_data');
 
@@ -1071,10 +1081,12 @@ add_action('admin_post_nopriv_procesar_formulario_contacto', 'procesar_formulari
 
       <div class="botones-opcion">
         <button type="button" id="misma-formula" class="activo">
-          👓 Misma fórmula en los dos ojos
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/mismaformula.png" alt="Imagen lente de contacto">
+           <span>Misma fórmula en los dos ojos</span>
         </button>
         <button type="button" id="diferente-formula">
-          👓 Diferente fórmula para cada ojo
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/diferenteformula.png" alt="Imagen lente de contacto">
+           <span>Diferente fórmula para cada ojo</span>
         </button>
       </div>
 
@@ -1091,28 +1103,35 @@ add_action('admin_post_nopriv_procesar_formulario_contacto', 'procesar_formulari
 
       <!-- Select doble -->
       <div id="select-doble" class="formulario-opcion" style="display:none;">
-        <div>
-          <label for="ojo-izq">Ojo Izq.</label>
-          <select id="ojo-izq" name="ojo_izq">
-            <option value="">Elegir</option>
-            <option value="-1.00">-1.00</option>
-            <option value="-1.50">-1.50</option>
-            <option value="-2.00">-2.00</option>
-          </select>
-        </div>
-        <div>
-          <label for="ojo-der">Ojo Der.</label>
-          <select id="ojo-der" name="ojo_der">
-            <option value="">Elegir</option>
-            <option value="-1.00">-1.00</option>
-            <option value="-1.50">-1.50</option>
-            <option value="-2.00">-2.00</option>
-          </select>
-        </div>
+          <div class="contenedor-poderes ">
+            <label for="poder">Poder (Esfera)</label>
+            <div>
+            <label for="ojo-izq">Ojo Izq.</label>
+            <select id="ojo-izq" name="ojo_izq">
+                <option value="">Elegir</option>
+                <option value="-1.00">-1.00</option>
+                <option value="-1.50">-1.50</option>
+                <option value="-2.00">-2.00</option>
+            </select>
+            </div>
+            <div>
+            <label for="ojo-der">Ojo Der.</label>
+            <select id="ojo-der" name="ojo_der">
+                <option value="">Elegir</option>
+                <option value="-1.00">-1.00</option>
+                <option value="-1.50">-1.50</option>
+                <option value="-2.00">-2.00</option>
+            </select>
+            </div>
+        </div>   
       </div>
     </div>
 
     <style>
+    .botones-opcion {
+        display: flex;
+        gap: 5px;
+      }
       .botones-opcion button {
         border: 1px solid #ccc;
         background: #fff;
@@ -1120,17 +1139,34 @@ add_action('admin_post_nopriv_procesar_formulario_contacto', 'procesar_formulari
         margin-right: 5px;
         cursor: pointer;
         border-radius: 6px;
+        color: black !important;
+        padding: 10px !important;
+        align-items: center;
+        display: flex !important;
       }
       .botones-opcion .activo {
-        background: #5564d6;
-        color: white;
-        border-color: #5564d6;
+        background: #353C69;
+        color: white !important;
+        border-color: #353C69;
+      }
+      .botones-opcion .activo img{
+        filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7483%) hue-rotate(132deg) brightness(100%) contrast(105%);
       }
       .formulario-opcion {
         margin-top: 10px;
+        margin-top: 10px;
+        border: 1px solid gray;
+        border-radius: 10px;
+        padding: 10px 20px;        
       }
-      .formulario-opcion div {
-        margin-bottom: 10px;
+      .formulario-opcion select{
+        border: none;
+        border-bottom: 1px solid;
+        width: 50%;
+        text-align: center;
+      }
+      .contenedor-poderes {
+        display: flex;
       }
     </style>
 

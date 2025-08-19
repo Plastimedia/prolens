@@ -1632,6 +1632,7 @@ main.shopPage section.contenido .productPage .summary .cart_b2b {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  margin-bottom: 0 !important;
 }
 main.shopPage section.contenido .productPage .summary .cart .groupquantity .quantity,
 main.shopPage section.contenido .productPage .summary .cart_b2b .groupquantity .quantity {
@@ -1709,30 +1710,31 @@ main.shopPage section.contenido .productPage .summary .cart_b2b .quantity input 
   width: 40px;
   color: #464646;
   margin: 20px 0;
-  border: 1px solid #353C69;
   height: 30px;
 }
 main.shopPage section.contenido .productPage .summary .cart .quantity button,
 main.shopPage section.contenido .productPage .summary .cart_b2b .quantity button {
-  width: 50px;
+  width: 30px;
   height: 30px;
   display: block;
-  color: #353C69;
-  border-radius: 7px 0 0 7px;
+  color: gray;
+  border-radius: 5px;
   text-align: center;
   line-height: 8px;
   cursor: pointer;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   border: 1px solid #353C69;
+  padding: 0;
 }
 main.shopPage section.contenido .productPage .summary .cart .quantity button:last-child,
 main.shopPage section.contenido .productPage .summary .cart_b2b .quantity button:last-child {
-  border-radius: 0 7px 7px 0;
+  border-radius: 5px;
 }
 main.shopPage section.contenido .productPage .summary .cart .quantity button:hover,
 main.shopPage section.contenido .productPage .summary .cart_b2b .quantity button:hover {
-  background: #E9DA7F;
+  background: #353C69;
+  color: white;
 }
 main.shopPage section.contenido .productPage .summary .cart button,
 main.shopPage section.contenido .productPage .summary .cart_b2b button {
@@ -1758,10 +1760,9 @@ main.shopPage section.contenido .productPage .summary .cart_b2b button.wpcbn-btn
 }
 main.shopPage section.contenido .productPage .summary .cart button.single_add_to_cart_button,
 main.shopPage section.contenido .productPage .summary .cart_b2b button.single_add_to_cart_button {
-  border-radius: 7px;
-  background-color: #E9DA7F;
-  font-weight: 700;
-  color: #3E3539;
+  background-color: #353C69;
+  font-weight: 300;
+  color: white;
 }
 main.shopPage section.contenido .productPage .summary .cart button.single_add_to_cart_button:hover::before,
 main.shopPage section.contenido .productPage .summary .cart_b2b button.single_add_to_cart_button:hover::before {
@@ -1930,8 +1931,6 @@ main.shopPage section.contenido .productPage .related {
   padding-top: 50px;
 }
 main.shopPage section.contenido .productPage .related h2 {
-  font-size: 34px;
-  font-size: 2rem;
   font-weight: 700;
   position: relative;
   padding-bottom: 5px;
@@ -3593,7 +3592,7 @@ section.nuestros-productos {
 .sobre-prolens .ancho .content .column-text {
   border: 1px solid gray;
   border-radius: 20px;
-  padding: 140px 40px;
+  padding: 120px 40px;
 }
 .sobre-prolens .ancho .info {
   text-align: center;
@@ -3601,6 +3600,20 @@ section.nuestros-productos {
 }
 .sobre-prolens .ancho h2 {
   font-weight: 700;
+}
+.sobre-prolens .ancho .conoce-mas-button {
+  margin-top: 40px;
+}
+.sobre-prolens .ancho .conoce-mas-button a strong::after {
+  content: "";
+  background-image: url("../images/after-conocemas.png");
+  width: 15px;
+  height: 15px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: middle;
 }
 .caracteristicas-prolens {
   background-color: #353c69;
@@ -3690,16 +3703,48 @@ section.metodos-pagos .info {
 section.metodos-pagos h2 {
   font-weight: 700;
 }
-section.metodos-pagos .content-bancos {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+section.metodos-pagos .content-bancos .splide__arrows {
+  display: none;
 }
 .splide__list {
   -ms-flex-pack: distribute;
       justify-content: space-around;
+}
+.caracteristicas-producto ul li::before {
+  content: "";
+  width: 50px;
+  height: 50px;
+  background-image: url("../images/estrella-caracteristicas.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.caracteristicas-producto h2 {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.caracteristicas-producto li {
+  list-style: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+.caracteristicas-producto ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  gap: 30px;
 }
 .sticky-wrapper {
   max-height: 0;
@@ -4289,7 +4334,7 @@ header::before {
   height: 40px;
   margin-right: 7px;
   vertical-align: middle;
-  background-image: url('../images/account.svg');
+  background-image: url('../images/usuario.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 70%;
@@ -4303,7 +4348,7 @@ header::before {
   height: 40px;
   position: relative;
   margin-right: 10px;
-  background-image: url('../images/star.svg');
+  background-image: url('../images/lista-deseos.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 70%;
@@ -4342,7 +4387,7 @@ header::before {
   display: block;
   width: 40px;
   height: 40px;
-  background-image: url('../images/cart.svg');
+  background-image: url('../images/carrito.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 70%;
@@ -6185,7 +6230,7 @@ header::before {
   }
   .container-menu .container-menu-buscador nav.el-menu .menu-ppl ul {
     display: block;
-    background-color: #9E9E9E;
+    background-color: #353C69;
     height: 100%;
     padding-top: 100px;
     position: relative;
@@ -6480,6 +6525,9 @@ header::before {
   }
   section.blog .blog-post {
     width: 100%;
+  }
+  section.metodos-pagos .content-bancos .splide__arrows {
+    display: block;
   }
 }
 @media screen and (max-width: 599px) {
